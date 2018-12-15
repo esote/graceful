@@ -1,0 +1,1 @@
+graceful tries to properly shut down a web server upon interrupts.

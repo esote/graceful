@@ -25,7 +25,7 @@ func Graceful(srv *http.Server, listen func(), sig ...os.Signal) {
 		if err := srv.Shutdown(context.Background()); err != nil {
 			log.Fatal(err)
 		} else {
-			fmt.Printf("server listening on port '%s' gracefully shutdown\n",
+			fmt.Printf("server listening on port '%s' gracefully shut down\n",
 				srv.Addr)
 		}
 

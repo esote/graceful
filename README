@@ -1,1 +1,13 @@
 graceful tries to properly shut down a web server upon interrupts.
+
+Example:
+
+	srv := &http.Server{
+		Handler: http.HandlerFunc(myHandler),
+	}
+
+	graceful.Graceful(srv, func() {
+		if err := srv.ListenAndServe(); err != http.ErrServerClosed {
+			log.Fatal(err)
+		}
+	}, os.Interrupt)
